@@ -25,8 +25,7 @@ class GreetingsController < ApplicationController
 
     respond_to do |format|
       if @greeting.save
-        format.html { redirect_to @greeting, notice: "Greeting was successfully created." }
-        format.json { render :show, status: :created, location: @greeting }
+        format.html { redirect_to root_path, notice: 'Message sent.' }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @greeting.errors, status: :unprocessable_entity }

@@ -3,7 +3,7 @@ class GreetingsController < ApplicationController
 
   # GET /greetings or /greetings.json
   def index
-    @greetings = Greeting.all
+    @greetings = Greeting.all.order(created_at: :desc)
   end
 
   # GET /greetings/1 or /greetings/1.json
